@@ -17,6 +17,8 @@ create a database
 
 migrate
 
+run : <pre>npm install -g laravel-echo </pre>
+
 run : <pre>laravel-echo-server init</pre>
 
 Now it is ready to run
