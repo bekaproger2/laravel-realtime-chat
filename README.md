@@ -7,9 +7,9 @@ Clone this Repository
 
 Rename .env.example file to .env
 
-run : <pre>composer install</pre>
+run : <pre>$ composer install</pre>
 
-run : <pre>npm install</pre>
+run : <pre>$ npm install</pre>
 
 !! Install Redis into your machine if not isntalled !!
 
@@ -17,19 +17,19 @@ create a database
 
 migrate
 
-run : <pre>npm install -g laravel-echo </pre>
+run : <pre>$ npm install -g laravel-echo-server</pre>
 
-run : <pre>laravel-echo-server init</pre>
+run : <pre>$ laravel-echo-server init</pre>
 
 Now it is ready to run
 
 Just create 3 terminal windows and run the commands below to start this app :
 
-<pre> php artisan serve </pre>
+<pre>$ php artisan serve </pre>
 
-<pre> php artisan queue:listen </pre>
+<pre>$ php artisan queue:listen </pre>
 
-<pre> laravel-echo-server start</pre>
+<pre>$ laravel-echo-server start</pre>
 
 open http://localhost:8000/ and register
 
