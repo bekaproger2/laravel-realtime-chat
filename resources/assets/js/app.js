@@ -30,6 +30,8 @@ const app = new Vue({
 
 });
 
+//Listening to comment Notifications
+
 window.listenForComments = function(){
    
         if($('meta[name="user"]').attr('data-user-id') != false){
@@ -37,7 +39,6 @@ window.listenForComments = function(){
             window.Echo.private('user.' +  $('meta[name="user"]').attr('data-user-id') + '.comment')
             .listen('CommentEvent', function(data){
                 if($('meta[name="user"]').attr('data-comment') === 'true'){
-                    console.log('la la');
                     var ntfs = document.querySelector('#not-count').textContent;
                     document.querySelector('#not-count').textContent = parseInt(ntfs) + 1;
                 }else{
@@ -52,42 +53,7 @@ window.listenForComments = function(){
         
     }
 
-// window.listenForMessages = function(listen){
-//     if(listen == false || listen == "" ){
-//         console.log('NO');
-//         return
-//     }else if (listen == true){
-//         console.log('NO');
-//         if($('meta[name="user"]').attr('data-user-id') != false){
-//             console.log('NO');
-//             window.Echo.private('chat.' +  $('meta[name="user"]').attr('data-user-id'))
-//             .listen('Chat', function(data){
-//                 console.log(data);
-//                 var ntfs = document.querySelector('#not-count').textContent;
-//                 document.querySelector('#not-count').textContent = parseInt(ntfs) + 1;
-//             });
-//         }else{
-//             console.log('NO');
-//             return
-//         }
-//     }
-// }
+
 window.onload = function (){
     window.listenForComments();
-    // window.listenForMessages(Boolean($('meta[name="user"]').attr('data-inbox')))
 }
-
-            // $(document).ready(function(){
-            //     window.Echo.private('user.' +  $('meta[name="csrf-token"]').attr('data-user-id') + '.comment')
-            //         .listen('CommentEvent', function(data){
-            //             console.log(data);
-            //             var ntfs = document.querySelector('#not-count').textContent;
-            //             document.querySelector('#not-count').textContent = parseInt(ntfs) + 1;
-
-            //         });
-            //     window.Echo.private('user.' + $('meta[name="csrf-token"]').attr('data-user-id') + '.like')
-            //         .listen('LikeEvent', function(data){
-            //             console.log(data);
-            //         });
-
-            // });
