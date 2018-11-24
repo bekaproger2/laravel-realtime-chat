@@ -21,6 +21,10 @@ run : <pre>$ npm install -g laravel-echo-server</pre>
 
 run : <pre>$ laravel-echo-server init</pre>
 
+Uncomment <pre> App\Providers\BroadcastServiceProvider::class </pre> in your config/app.php
+
+and change BROADCAST_DRIVER and QUEUE_CONNECTION to redis in your .env file.
+
 Now it is ready to run
 
 Just create 3 terminal windows and run the commands below to start this app :
