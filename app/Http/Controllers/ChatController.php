@@ -14,9 +14,9 @@ use App\Services\ChatService;
 class ChatController extends Controller
 {
 
-    public function __construct(){
+    public function __construct(ChatService $chatService){
         $this->middleware('auth');
-        $this->chatService = new ChatService();
+        $this->chatService = $chatService;
         $this->user = Auth::user();
     }
 
