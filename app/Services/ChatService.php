@@ -73,7 +73,7 @@ class ChatService
      * @param App\ChatRoom $chatroom
      * @return void 
      */
-    public function updateChatMessages ($chatroom) 
+    public function updateChatMessages ($chatroom, $receiverId) 
     {
         foreach ($chatRoom->messages as $message){
             if($message->sender == $receiverId){
