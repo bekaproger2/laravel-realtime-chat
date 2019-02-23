@@ -25,6 +25,7 @@ class ChatController extends Controller
             $receiver = User::findOrFail($receiverId);
             
             $chatRoomId = $this->chatService->getChatRoomId($receiverId, $request);
+            $this->chatService->updateChatMessages(ChatRoom::findOrFail($chatRoomId), $receiverId);
 
             return view('privatechat.chatroom', array(
                 'user' => Auth::id(),
